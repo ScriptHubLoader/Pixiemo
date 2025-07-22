@@ -128,7 +128,21 @@ end
 if isUnsupported(executor) then
 	showErrorPopup()
 else
-	-- Executor is supported, proceed to load scripts
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptHubLoader/NoLagHub/refs/heads/main/LoaderV2.lua"))()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptHubLoader/Pixiemo/refs/heads/main/Main.lua"))()
+	-- Execute first script
+	local success1, err1 = pcall(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptHubLoader/NoLagHub/refs/heads/main/LoaderV2.lua"))()
+	end)
+
+	if success1 then
+		-- Only proceed to second if first ran successfully
+		local success2, err2 = pcall(function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptHubLoader/Pixiemo/refs/heads/main/Main.lua"))()
+		end)
+
+		if not success2 then
+			warn("Error in second script:", err2)
+		end
+	else
+		warn("Error in first script:", err1)
+	end
 end
