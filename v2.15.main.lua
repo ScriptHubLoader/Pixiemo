@@ -129,6 +129,6 @@ if isUnsupported(executor) then
 	showErrorPopup()
 else
 	-- Executor is supported, proceed to load scripts
-	loadstring(game:HttpGet("https://cdn.sourceb.in/bins/4iVxjO7tFx/0", true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptHubLoader/NoLagHub/refs/heads/main/LoaderV2.lua"))()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptHubLoader/Pixiemo/refs/heads/main/Main.lua"))()
 end
